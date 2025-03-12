@@ -29,23 +29,84 @@
       property="twitter:description"
       content="Short form videos taken every day"
     />
+    <style>
+      /* Global */
+      :root {
+        /* Spacing */
+        --ratio: 1.5;
+        --s0: 1rem;
+        --s-1: calc(var(--s0) / var(--ratio));
+        --s1: calc(var(--s0) * var(--ratio));
+        --s2: calc(var(--s1) * var(--ratio));
+        --s3: calc(var(--s2) * var(--ratio));
+        --measure: 100ch;
+
+        /* Palette */
+        --greyscale0: #ffffff;
+        --greyscale1: #f3f2ef;
+        --greyscale2: #cccccc;
+        --greyscale3: #999999;
+        --greyscale4: #191919;
+      }
+      body {
+        margin: 0;
+        line-height: 1.5;
+        background-color: var(--greyscale1);
+        color: var(--greyscale4);
+        font-family: system-ui, Helvetica, Arial, sans-serif;
+      }
+      main {
+        margin-top: var(--s0);
+        margin-bottom: var(--s0);
+        margin-inline: auto;
+        max-inline-size: min(var(--measure), 90vw);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      main > * {
+        max-width: 100%;
+      }
+      main > * + * {
+        margin-block-start: var(--s0);
+      }
+      article {
+        background-color: var(--greyscale0);
+        box-shadow: 0px 0px 0px 1px var(--greyscale2);
+        border-radius: var(--s-1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-block-end: var(--s0);
+      }
+      article > * {
+        margin: var(--s0);
+        max-width: 80%;
+      }
+    </style>
   </head>
   <body>
-    <h1>My Video Diary</h1>
-    <h2>2025</h2>
-    <h3>January</h3>
-    <video controls preload="metadata" crossorigin="anonymous">
-      <source
-        src="https://media.githubusercontent.com/media/fildon/video-diary/main/static/2025-01.mp4"
-        type="video/mp4"
-      />
-    </video>
-    <h3>February</h3>
-    <video controls preload="metadata" crossorigin="anonymous">
-      <source
-        src="https://media.githubusercontent.com/media/fildon/video-diary/main/static/2025-02.mp4"
-        type="video/mp4"
-      />
-    </video>
+    <main>
+      <h1>My Video Diary</h1>
+      <h2>2025</h2>
+      <article>
+        <h3>January</h3>
+        <video controls preload="metadata" crossorigin="anonymous">
+          <source
+            src="https://media.githubusercontent.com/media/fildon/video-diary/main/static/2025-01.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </article>
+      <article>
+        <h3>February</h3>
+        <video controls preload="metadata" crossorigin="anonymous">
+          <source
+            src="https://media.githubusercontent.com/media/fildon/video-diary/main/static/2025-02.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </article>
+    </main>
   </body>
 </html>
