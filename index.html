@@ -55,7 +55,8 @@
         color: var(--greyscale4);
         font-family: system-ui, Helvetica, Arial, sans-serif;
       }
-      main {
+      main,
+      footer {
         margin-top: var(--s0);
         margin-bottom: var(--s0);
         margin-inline: auto;
@@ -63,12 +64,12 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-      }
-      main > * {
-        max-width: 100%;
-      }
-      main > * + * {
-        margin-block-start: var(--s0);
+        & > * {
+          max-width: 100%;
+        }
+        & > * + * {
+          margin-block-start: var(--s0);
+        }
       }
       article {
         background-color: var(--greyscale0);
@@ -134,5 +135,8 @@
         </video>
       </article>
     </main>
+    <footer>
+      <a href="https://github.com/fildon/video-diary/">Source code</a>
+    </footer>
   </body>
 </html>
