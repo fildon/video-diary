@@ -58,10 +58,22 @@
         margin-bottom: 20px;
       }
 
-      iframe {
-        width: 560px;
-        height: 315px;
+      .iframe-container {
+        position: relative;
+        height: 0;
+        width: min(85vw, 560px);
+        /* This is a trick to preserve aspect-ratio on iframes */
+        padding-bottom: 56.5%; /* Youtube exports the videos at 560 by 315 = 56.5% */
+        overflow: hidden;
         border-radius: 8px;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
       }
 
       footer {
@@ -83,121 +95,121 @@
         <h3 id="2025jan">
           <a href="#2025jan">January</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/bKIL70iP5Nc?si=Xc0D-TvtZ0Dx_WU3"
-          title="January 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/bKIL70iP5Nc?si=Xc0D-TvtZ0Dx_WU3"
+            title="January 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025feb">
           <a href="#2025feb">February</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/lggIn-1yd8Q?si=fmNzsKmeaKYTCAxQ"
-          title="February 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/lggIn-1yd8Q?si=fmNzsKmeaKYTCAxQ"
+            title="February 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025mar">
           <a href="#2025mar">March</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/1tHzphoNXXM?si=Qzx7iRUMz7pKr0_-"
-          title="March 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/1tHzphoNXXM?si=Qzx7iRUMz7pKr0_-"
+            title="March 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025apr">
           <a href="#2025apr">April</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/sTchSm6BqQQ?si=FoASemMCdjp9IKFm"
-          title="April 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/sTchSm6BqQQ?si=FoASemMCdjp9IKFm"
+            title="April 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025may">
           <a href="#2025may">May</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/zfbSivZ_u5Q?si=E6f_tT2rImdNz_BZ"
-          title="May 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/zfbSivZ_u5Q?si=E6f_tT2rImdNz_BZ"
+            title="May 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025jun">
           <a href="#2025jun">June</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/-V3wYZhvFFc?si=vf0d2GJXKFaedFIQ"
-          title="June 2025"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/-V3wYZhvFFc?si=vf0d2GJXKFaedFIQ"
+            title="June 2025"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025jul">
           <a href="#2025jul">July</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/Ud6et5IuZoM?si=UVE1j_zdaVTO-AsR"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/Ud6et5IuZoM?si=UVE1j_zdaVTO-AsR"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
       <article>
         <h3 id="2025aug">
           <a href="#2025aug">August</a>
         </h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/tZ-v_yiVtxE?si=I0Xkfe4-Ywgjvf-s"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/tZ-v_yiVtxE?si=I0Xkfe4-Ywgjvf-s"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </article>
     </main>
     <footer>
