@@ -1,14 +1,7 @@
-class VideoDiaryEntry extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
+const template = document.querySelector("#video-diary-entry-template");
+const main = document.querySelector("main");
 
-  connectedCallback() {
-    // Attributes
-    const date = new Date(this.getAttribute("date"));
-    const src = this.getAttribute("src");
-
+const render = ({ date, src }) => {
     // Derived state
     const year = date.getFullYear();
     const shortMonth = date.toLocaleString("default", { month: "short" });
@@ -16,47 +9,24 @@ class VideoDiaryEntry extends HTMLElement {
     const title = `${longMonth} ${year}`;
     const id = `${year}${shortMonth}`;
 
-    this.shadowRoot.innerHTML = `
-      <article>
-        <h3 id="${id}">
-          <a href="#${id}">${title}</a>
-        </h3>
-        <div class="iframe-container">
-          <iframe
-            src="${src}"
-            title="${title}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </article>
-      <style>
-        article {
-          margin-bottom: 20px;
-        }
+    // Clone the template and fill in the details
+    const clone = template.content.cloneNode(true);
+    clone.querySelector("h3").id = id;
+    clone.querySelector("h3 a").href = `#${id}`;
+    clone.querySelector("h3 a").textContent = title;
+    clone.querySelector("iframe").src = src;
+    clone.querySelector("iframe").title = title;
+    main.appendChild(clone);
+};  
 
-        .iframe-container {
-          position: relative;
-          height: 0;
-          width: min(85vw, 560px);
-          /* This is a trick to preserve aspect-ratio on iframes */
-          padding-bottom: 56.5%; /* Youtube exports the videos at 560 by 315 = 56.5% */
-          overflow: hidden;
-          border-radius: 8px;
-        }
-
-        iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-        }
-      </style>
-    `;
-  }
-}
-
-customElements.define("video-diary-entry", VideoDiaryEntry);
+const videoDiaryEntries = [
+    { date: new Date("2025-01"), src: "https://www.youtube.com/embed/bKIL70iP5Nc?si=Xc0D-TvtZ0Dx_WU3" },
+    { date: new Date("2025-02"), src: "https://www.youtube.com/embed/lggIn-1yd8Q?si=fmNzsKmeaKYTCAxQ" },
+    { date: new Date("2025-03"), src: "https://www.youtube.com/embed/1tHzphoNXXM?si=Qzx7iRUMz7pKr0_-" },
+    { date: new Date("2025-04"), src: "https://www.youtube.com/embed/sTchSm6BqQQ?si=FoASemMCdjp9IKFm" },
+    { date: new Date("2025-05"), src: "https://www.youtube.com/embed/zfbSivZ_u5Q?si=E6f_tT2rImdNz_BZ" },
+    { date: new Date("2025-06"), src: "https://www.youtube.com/embed/-V3wYZhvFFc?si=vf0d2GJXKFaedFIQ" },
+    { date: new Date("2025-07"), src: "https://www.youtube.com/embed/Ud6et5IuZoM?si=UVE1j_zdaVTO-AsR" },
+    { date: new Date("2025-08"), src: "https://www.youtube.com/embed/tZ-v_yiVtxE?si=I0Xkfe4-Ywgjvf-s" },
+    { date: new Date("2025-09"), src: "https://www.youtube.com/embed/rbUynoE2LeY?si=9XECwDBEc5fCaLS-" }
+].forEach(render);

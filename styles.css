@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+.iframe-container {
+    position: relative;
+    height: 0;
+    width: min(85vw, 560px);
+    /* This is a trick to preserve aspect-ratio on iframes */
+    padding-bottom: 56.5%;
+    /* Youtube exports the videos at 560 by 315 = 56.5% */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
