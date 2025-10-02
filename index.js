@@ -29,4 +29,6 @@ const videoDiaryEntries = [
     { date: new Date("2025-07"), src: "https://www.youtube.com/embed/Ud6et5IuZoM?si=UVE1j_zdaVTO-AsR" },
     { date: new Date("2025-08"), src: "https://www.youtube.com/embed/tZ-v_yiVtxE?si=I0Xkfe4-Ywgjvf-s" },
     { date: new Date("2025-09"), src: "https://www.youtube.com/embed/rbUynoE2LeY?si=9XECwDBEc5fCaLS-" }
-].forEach(render);
+];
+
+videoDiaryEntries.forEach(render);
