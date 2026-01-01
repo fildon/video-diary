@@ -64,6 +64,10 @@ const videoDiaryEntries = [
     date: new Date("2025-11"),
     src: "https://www.youtube.com/embed/6CSknHLk16Y?si=Bp8Xx9xNMCFIIKW9",
   },
+  {
+    date: new Date("2025-12"),
+    src: "https://www.youtube.com/embed/mIU9dUy-otE?si=pPxzWtCqy-wLJ4Ft",
+  },
 ];
 
 videoDiaryEntries.forEach(render);
