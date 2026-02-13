@@ -1,5 +1,5 @@
 const template = document.querySelector("#video-diary-entry-template");
-const main = document.querySelector("main");
+const diaryEntriesSection = document.querySelector("#diary-entries");
 
 const render = ({ year, month, src }) => {
   const hasMonth = typeof month === "number";
@@ -19,7 +19,7 @@ const render = ({ year, month, src }) => {
   clone.querySelector("h3 a").textContent = title;
   clone.querySelector("iframe").src = src;
   clone.querySelector("iframe").title = title;
-  main.appendChild(clone);
+  diaryEntriesSection.appendChild(clone);
 };
 
 const videoDiaryEntries = [
