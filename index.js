@@ -25,12 +25,12 @@ const render = ({ year, month, src }) => {
 const videoDiaryEntries = [
   {
     year: 2025,
-    src: "https://youtu.be/ZIE79QnTb4E?si=viujxxCoa3-PxKGp",
+    src: "https://www.youtube.com/embed/ZIE79QnTb4E?si=hlGO9f_LiLfSXH1P",
   },
   {
     year: 2026,
     month: 1,
-    src: "https://youtu.be/Mx5q7QuLTFQ?si=H2c8eHvaRz8qhBhv",
+    src: "https://www.youtube.com/embed/Mx5q7QuLTFQ?si=S-y7MN7akxUBpRO1",
   }
 ];
 
