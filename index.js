@@ -1,13 +1,16 @@
 const template = document.querySelector("#video-diary-entry-template");
 const main = document.querySelector("main");
 
-const render = ({ date, src }) => {
-  // Derived state
-  const year = date.getFullYear();
-  const shortMonth = date.toLocaleString("default", { month: "short" });
+const render = ({ year, month, src }) => {
+  const hasMonth = typeof month === "number";
+  const date = hasMonth
+    ? new Date(year, month - 1, 1)
+    : new Date(year, 0, 1);
   const longMonth = date.toLocaleString("default", { month: "long" });
-  const title = `${longMonth} ${year}`;
-  const id = `${year}${shortMonth}`;
+  const title = hasMonth ? `${longMonth} ${year}` : `${year}`;
+  const id = hasMonth
+    ? `video-${year}-${String(month).padStart(2, "0")}`
+    : `video-${year}`;
 
   // Clone the template and fill in the details
   const clone = template.content.cloneNode(true);
@@ -21,53 +24,14 @@ const render = ({ date, src }) => {
 
 const videoDiaryEntries = [
   {
-    date: new Date("2025-01"),
-    src: "https://www.youtube.com/embed/bKIL70iP5Nc?si=Xc0D-TvtZ0Dx_WU3",
+    year: 2025,
+    src: "https://youtu.be/ZIE79QnTb4E?si=viujxxCoa3-PxKGp",
   },
   {
-    date: new Date("2025-02"),
-    src: "https://www.youtube.com/embed/lggIn-1yd8Q?si=fmNzsKmeaKYTCAxQ",
-  },
-  {
-    date: new Date("2025-03"),
-    src: "https://www.youtube.com/embed/1tHzphoNXXM?si=Qzx7iRUMz7pKr0_-",
-  },
-  {
-    date: new Date("2025-04"),
-    src: "https://www.youtube.com/embed/sTchSm6BqQQ?si=FoASemMCdjp9IKFm",
-  },
-  {
-    date: new Date("2025-05"),
-    src: "https://www.youtube.com/embed/zfbSivZ_u5Q?si=E6f_tT2rImdNz_BZ",
-  },
-  {
-    date: new Date("2025-06"),
-    src: "https://www.youtube.com/embed/-V3wYZhvFFc?si=vf0d2GJXKFaedFIQ",
-  },
-  {
-    date: new Date("2025-07"),
-    src: "https://www.youtube.com/embed/Ud6et5IuZoM?si=UVE1j_zdaVTO-AsR",
-  },
-  {
-    date: new Date("2025-08"),
-    src: "https://www.youtube.com/embed/tZ-v_yiVtxE?si=I0Xkfe4-Ywgjvf-s",
-  },
-  {
-    date: new Date("2025-09"),
-    src: "https://www.youtube.com/embed/rbUynoE2LeY?si=9XECwDBEc5fCaLS-",
-  },
-  {
-    date: new Date("2025-10"),
-    src: "https://www.youtube.com/embed/jbWW5ytoSps?si=gu6MWTobk3FEDXLA",
-  },
-  {
-    date: new Date("2025-11"),
-    src: "https://www.youtube.com/embed/6CSknHLk16Y?si=Bp8Xx9xNMCFIIKW9",
-  },
-  {
-    date: new Date("2025-12"),
-    src: "https://www.youtube.com/embed/mIU9dUy-otE?si=pPxzWtCqy-wLJ4Ft",
-  },
+    year: 2026,
+    month: 1,
+    src: "https://youtu.be/Mx5q7QuLTFQ?si=H2c8eHvaRz8qhBhv",
+  }
 ];
 
 videoDiaryEntries.forEach(render);
