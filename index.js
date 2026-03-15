@@ -3,9 +3,7 @@ const diaryEntriesSection = document.querySelector("#diary-entries");
 
 const render = ({ year, month, src }) => {
   const hasMonth = typeof month === "number";
-  const date = hasMonth
-    ? new Date(year, month - 1, 1)
-    : new Date(year, 0, 1);
+  const date = hasMonth ? new Date(year, month - 1, 1) : new Date(year, 0, 1);
   const longMonth = date.toLocaleString("default", { month: "long" });
   const title = hasMonth ? `${longMonth} ${year}` : `${year}`;
   const id = hasMonth
@@ -31,7 +29,12 @@ const videoDiaryEntries = [
     year: 2026,
     month: 1,
     src: "https://www.youtube.com/embed/Mx5q7QuLTFQ?si=S-y7MN7akxUBpRO1",
-  }
+  },
+  {
+    year: 2026,
+    month: 2,
+    src: "https://www.youtube.com/embed/Z74vREEq6cg?si=e15akUO0D1pNaYxU",
+  },
 ];
 
 videoDiaryEntries.forEach(render);
