@@ -35,6 +35,16 @@ const videoDiaryEntries = [
     month: 2,
     src: "https://www.youtube.com/embed/Z74vREEq6cg?si=e15akUO0D1pNaYxU",
   },
+  {
+    year: 2026,
+    month: 3,
+    src: "https://www.youtube.com/embed/j3_DZVLTYHI?si=bwgIyvcf7zUFjhrc",
+  },
+  {
+    year: 2026,
+    month: 4,
+    src: "https://www.youtube.com/embed/taDDbuKtrYI?si=VgdcchckwTVFPxAi",
+  },
 ];
 
 videoDiaryEntries.forEach(render);
